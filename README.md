@@ -23,7 +23,7 @@ yarn global add bs-platform
 Once you have bsb-platform installed let's clone this repo and install dependencies:
 
 ```bash
-git clone tbd
+git clone https://github.com/prztrz/rescript-workshop.git
 yarn install
 ```
 
