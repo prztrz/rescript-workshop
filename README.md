@@ -55,11 +55,16 @@ yarn add bs-webapi
 
 We also need to make bucklescript aware of this module. So let's add it to bs-dependencies in `bsconfig.json` file.
 
+````json
 ```json
-{
-  "bs-dependencies": ["reason-react", "bs-webapi"]
-}
-```
+  "dependencies": {
+    "bs-webapi": "^0.19.1",
+    "bs-css-emotion": "^2.2.0",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "reason-react": ">=0.7.1"
+  },
+````
 
 ### Use js document
 
