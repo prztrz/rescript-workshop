@@ -1,5 +1,7 @@
 // Entry point
 
+// import stylesheet
+
 // open webapi for comfortable dom manipulations
 open Webapi
 

@@ -16,6 +16,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "bs-css-emotion": "^2.2.0",
     "bs-webapi": "^0.19.1",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
