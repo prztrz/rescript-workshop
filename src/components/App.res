@@ -3,5 +3,16 @@ module Styles = {
 
   let container = style(list{display(flexBox), flexDirection(row)})
 }
+
+open Types
+
 @react.component
-let make = () => <div className=Styles.container> <Board /> <GameInfo /> </div>
+let make = () => {
+  let (board, setBoard) = React.useState((_): boardState => list{
+    list{None, None, None},
+    list{None, None, None},
+    list{None, None, None},
+  })
+
+  <div className=Styles.container> <Board board /> <GameInfo /> </div>
+}

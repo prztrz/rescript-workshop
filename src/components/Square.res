@@ -19,7 +19,13 @@ module Styles = {
   })
 }
 
+open Types
+
 @react.component
-let make = () => {
-  <button className=Styles.container> {React.null} </button>
+let make = (~value: option<squareValue>) => {
+  let content = switch value {
+  | None => React.null
+  | Some(sign) => sign === Cross ? React.string("X") : React.string("O")
+  }
+  <button className=Styles.container> {content} </button>
 }
