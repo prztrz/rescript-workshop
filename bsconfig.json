@@ -16,7 +16,9 @@
   "namespace": true,
   "bs-dependencies": [
     "reason-react",
-    "bs-webapi"
+    "bs-webapi",
+    "bs-css",
+    "bs-css-emotion"
   ],
   "refmt": 3
 }
