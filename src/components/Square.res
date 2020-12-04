@@ -16,16 +16,18 @@ module Styles = {
     width(#px(34)),
     cursor(#pointer),
     focus(list{outline(#zero, #none, #transparent)}),
+    disabled(list{color(#currentColor), cursor(#notAllowed)}),
   })
 }
 
 open Types
 
 @react.component
-let make = (~value: option<squareValue>) => {
+let make = (~value: option<squareValue>, ~onMove: ReactEvent.Mouse.t => unit) => {
   let content = switch value {
   | None => React.null
   | Some(sign) => sign === Cross ? React.string("X") : React.string("O")
   }
-  <button className=Styles.container> {content} </button>
+
+  <button disabled={value !== None} className=Styles.container onClick={onMove}> {content} </button>
 }
