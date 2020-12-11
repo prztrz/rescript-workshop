@@ -18,7 +18,11 @@
     "reason-react",
     "bs-webapi",
     "bs-css",
-    "bs-css-emotion"
+    "bs-css-emotion",
+    "re-classnames"
   ],
+  "warnings": {
+    "number": "-44"
+  },
   "refmt": 3
 }

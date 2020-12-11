@@ -13,11 +13,16 @@ let mapListToElements = (list, transform) =>
 
 @react.component
 let make = (
+  ~result: option<result>,
   ~board: boardState,
   ~player: squareValue,
   ~onMove: (int, ReactEvent.Mouse.t) => unit,
 ) => {
-  let status = "Next Player: " ++ (player === Cross ? "X" : "O")
+  let status = switch (result, player) {
+  | (Some(Tie), _) => "Tie"
+  | (Some(Win(sign, _)), _) => "Winner " ++ (sign === Cross ? "X" : "O")
+  | (None, sign) => "Next player " ++ (sign === Cross ? "X" : "O")
+  }
   <div>
     <div className=Styles.status> {React.string(status)} </div>
     {mapListToElements(board, (listIndex, row) =>
